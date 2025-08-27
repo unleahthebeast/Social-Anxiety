@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Anxiety And YOU - eBook</title>
+  <meta name="description" content="Social Anxiety And YOU — Transformative guide to overcoming social anxiety. Instant digital download." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Minimal inline CSS so you can deploy quickly */
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f8fafc;color:#111}
+    header{background:#4a90e2;color:#fff;padding:36px 20px;text-align:center}
+    a{color:#4a90e2}
+    .container{max-width:920px;margin:36px auto;padding:0 20px}
+    .btn{background:#4a90e2;color:#fff;padding:12px 20px;border-radius:6px;border:none;cursor:pointer;font-weight:600}
+    footer{background:#0f1724;color:#fff;padding:20px;text-align:center;margin-top:40px}
+    nav a{margin:0 10px;color:#fff;text-decoration:none}
+    .policy-links{margin-top:18px}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Social Anxiety And YOU</h1>
+    <p style="margin:6px 0 0;font-size:1.1rem">Break free from fear & embrace authentic confidence — instant digital download</p>
+    <nav style="margin-top:12px">
+      <a href="terms.html">Terms</a> |
+      <a href="privacy.html">Privacy</a> |
+      <a href="shipping.html">Shipping</a> |
+      <a href="refunds.html">Refunds</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>About the eBook</h2>
+    <p><em>Social Anxiety And YOU</em> explains the “Hidden Program” behind social anxiety and presents an inside-out method to dismantle anxiety and raise self-esteem. This short guide contains practical insights and a mindfulness-based approach to help you become effortlessly social without pretending.</p>
+
+    <h3>What's inside</h3>
+    <ul>
+      <li>Understand why social anxiety feels like an invisible cage</li>
+      <li>How to stop feeling fake around people</li>
+      <li>Uncover the drivers of social panic</li>
+      <li>Practical inside-out method to release anxiety</li>
+      <li>Guidance to become authentically social</li>
+    </ul>
+
+    <h3>Buy now — Instant delivery</h3>
+    <p>Price: <strong>₹299</strong> (one-time).</p>
+
+    <!-- Razorpay Checkout Button -->
+    <button id="rzp-button" class="btn">Buy Now — ₹299</button>
+
+    <p style="margin-top:16px;font-size:0.95rem">
+      After payment you'll receive an email with a secure download link and instructions. No physical shipping required.
+    </p>
+
+    <div class="policy-links">
+      <a href="terms.html">Terms & Conditions</a> • 
+      <a href="privacy.html">Privacy Policy</a> • 
+      <a href="refunds.html">Cancellation & Refunds</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2025 Social Anxiety And YOU</div>
+    <small>Contact: <a href="mailto:your-email@example.com" style="color:#fff">your-email@example.com</a> | Phone: +91-XXXXXXXXXX</small>
+  </footer>
+
+  <!-- Razorpay Checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    // NOTE: Replace YOUR_KEY_ID with your Razorpay Key ID.
+    // This is a client-side demo suitable for test mode. For production payment capture,
+    // a secure server endpoint to create Orders is recommended.
+    var options = {
+      "key": "YOUR_KEY_ID", // Replace with your Key ID
+      "amount": "29900", // amount in paise = 299 INR
+      "currency": "INR",
+      "name": "Social Anxiety And YOU",
+      "description": "eBook - Instant Digital Download",
+      "image": "", // optional: public URL to logo
+      "handler": function (response){
+        // This handler runs after payment is successful.
+        // For verification and order capture, integrate server-side as recommended by Razorpay.
+        alert("Payment successful. Payment ID: " + response.razorpay_payment_id + "\nYou will receive an email with a download link shortly.");
+      },
+      "prefill": {
+        "name": "",
+        "email": "",
+        "contact": ""
+      },
+      "theme": {
+        "color": "#4a90e2"
+      }
+    };
+    var rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button').onclick = function(e){
+      rzp1.open();
+      e.preventDefault();
+    }
+  </script>
+</body>
+</html>
